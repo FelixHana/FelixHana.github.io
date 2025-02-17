@@ -2814,7 +2814,7 @@
 <h4 id="_6">优化器<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <p>SQL 查询语句制定执行计划，决定使用的索引<br />
 explain 查询的 type、选择的 key<br />
-<a href="#性能分析">MySQL</a></p>
+<a href="#性能分析">性能分析</a></p>
 <h4 id="_7">执行器<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <p>根据执行计划执行 SQL 查询语句，从存储引擎读取记录，返回给客户端<br />
 <a href="https://xiaolincoding.com/mysql/base/how_select.html#%E6%89%A7%E8%A1%8C%E5%99%A8">图解 MySQL 执行器</a></p>
@@ -2857,7 +2857,7 @@ explain 查询的 type、选择的 key<br />
 <h4 id="_10">真实数据<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <ul>
 <li>隐藏列：默认主键 row_id（未定义 Primary &amp; Unique）、事务 id trx_id、<ul>
-<li>上一个版本指针 roll_pointer （MVCC）insert undo 标记、<a href="#回滚段">MySQL</a>编号、<a href="#undo%20log%20页面">MySQL</a> 页号、页面偏移量</li>
+<li>上一个版本指针 roll_pointer （MVCC）insert undo 标记、<a href="#回滚段">回滚段</a>编号、<a href="#undo%20log%20页面">undo log页面</a> 页号、页面偏移量</li>
 </ul>
 </li>
 <li>CHAR(M)：采用定长字符集时，占用的字节数不会被加到变长字段长度列表，而如果采用变长字符集时，占用的字节数也会被加到变长字段长度列表</li>
@@ -3187,7 +3187,7 @@ n 最大值 = (65535 - 2 字节长度值 - 1 NULL 标识) / 字符集一个字�
 <h5 id="file-space-header">File Space Header<a class="headerlink" href="#file-space-header" title="Permanent link">&para;</a></h5>
 <p>存储表空间整体属性<br />
 <img alt="|800" src="../attachments/Pasted%20image%2020241206183624.png" /><br />
-- List Base Node for FREE...：直属于表空间的 XDES Entry 链表基地址<a href="#Extent%20区">MySQL</a><br />
+- List Base Node for FREE...：直属于表空间的 XDES Entry 链表基地址<a href="#Extent%20区">Extent 区</a><br />
 - FRAG_N_USED 在 FREE_FRAG 链表中已经使用的页面数量<br />
 - FREE Limit：只有该字段之前的区初始化<br />
 - Next Unused Segment ID：用于创建新段<br />
@@ -3208,7 +3208,7 @@ n 最大值 = (65535 - 2 字节长度值 - 1 NULL 标识) / 字符集一个字�
 <p>与 change buffer 相关</p>
 <h3 id="segment-header">Segment Header<a class="headerlink" href="#segment-header" title="Permanent link">&para;</a></h3>
 <p>用于维护叶子/非叶子节点 Segment 的 INODE Entry] 结构对应关系<br />
-<a href="#Page%20Header">MySQL</a> 中定义了 <code>PAGE_BTR_SEG_LEAF</code> 和 <code>PAGE_BTR_SEG_TOP</code> 指向 Segment Header<br />
+<a href="#Page%20Header">Page Header</a> 中定义了 <code>PAGE_BTR_SEG_LEAF</code> 和 <code>PAGE_BTR_SEG_TOP</code> 指向 Segment Header<br />
 只需要在索引的根页面记录<br />
 <img alt="|500" src="../attachments/Pasted%20image%2020241210170724.png" /></p>
 <h3 id="_17">系统表空间<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
@@ -3337,14 +3337,14 @@ n 最大值 = (65535 - 2 字节长度值 - 1 NULL 标识) / 字符集一个字�
 <li>内存中维护事务 id 全局变量，256 倍数时刷新到系统表空间第 5 页的 Max trx ID 属性</li>
 </ul>
 </li>
-<li>聚簇索引行格式 <a href="#真实数据">MySQL</a> 中的<em>隐藏信息</em>中记录了 trx_id 即为改动记录的事务对应的 id</li>
+<li>聚簇索引行格式 <a href="#真实数据">真实数据</a> 中的<em>隐藏信息</em>中记录了 trx_id 即为改动记录的事务对应的 id</li>
 </ul>
 <h3 id="undo-log_1">undo log 格式<a class="headerlink" href="#undo-log_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>undo log 的页类型为 <code>FIL_PAGE_UNDO_LOG</code> <a href="#File%20Header">MySQL</a></li>
+<li>undo log 的页类型为 <code>FIL_PAGE_UNDO_LOG</code> <a href="#File%20Header">File Header</a></li>
 <li>从系统表空间或 undo tablespace 分配</li>
 <li>增删改操作只考虑记录聚簇索引上的信息，二级索引可以根据主键来 undo</li>
-<li>聚簇索引行格式 <a href="#真实数据">MySQL</a> 中的<em>隐藏信息</em>中记录了 roll_pointer 指向对应的 undo log，第一个 bit 代表 update/insert</li>
+<li>聚簇索引行格式 <a href="#真实数据">真实数据</a> 中的<em>隐藏信息</em>中记录了 roll_pointer 指向对应的 undo log，第一个 bit 代表 update/insert</li>
 </ul>
 <h4 id="insert-undo-log">INSERT undo log<a class="headerlink" href="#insert-undo-log" title="Permanent link">&para;</a></h4>
 <p><code>TRX_UNDO_INSERT_REC</code><br />
@@ -3352,10 +3352,10 @@ n 最大值 = (65535 - 2 字节长度值 - 1 NULL 标识) / 字符集一个字�
 <h4 id="delete-undo-log">DELETE undo log<a class="headerlink" href="#delete-undo-log" title="Permanent link">&para;</a></h4>
 <ul>
 <li>删除记录的原理<ul>
-<li><a href="#Page%20Header">MySQL</a> 中的 <code>PAGE_FREE</code> 是已删除记录的链表</li>
+<li><a href="#Page%20Header">Page Header</a> 中的 <code>PAGE_FREE</code> 是已删除记录的链表</li>
 <li>删除的过程分为两阶段<ul>
 <li>delete mark：首先将待删除记录头信息 <code>delete_mask</code> 置 1，所在事务提交之前都称为中间状态 (实现 MVCC) </li>
-<li>purge：删除所在事务提交后，专门的线程将记录从正常链表移除，从头部插入垃圾链表，调整 <a href="#Page%20Header">MySQL</a> 中的其他属性</li>
+<li>purge：删除所在事务提交后，专门的线程将记录从正常链表移除，从头部插入垃圾链表，调整 <a href="#Page%20Header">Page Header</a> 中的其他属性</li>
 </ul>
 </li>
 <li><code>PAGE_GARBAGE</code> 统计当前页面可重用存储空间，新插入节点只和 <code>PAGE_FREE</code> 的头节点比较大小，页面快满时根据<code>PAGE_GARBAGE</code>进行页内碎片整理</li>
@@ -3413,7 +3413,7 @@ n 最大值 = (65535 - 2 字节长度值 - 1 NULL 标识) / 字符集一个字�
 </ul>
 </li>
 <li><code>TRX_UNDO_LAST_LOG</code> 最后一个 undo log header 位置</li>
-<li><code>TRX_UNDO_FSEG_HEADER</code> 本链表对应的 <a href="#Segment%20Header">MySQL</a> 信息，用来定位 INODE Entry</li>
+<li><code>TRX_UNDO_FSEG_HEADER</code> 本链表对应的 <a href="#Segment%20Header">Segment Header</a> 信息，用来定位 INODE Entry</li>
 <li><code>TRX_UNDO_PAGE_LIST</code> 链表基节点</li>
 </ul>
 <h4 id="undo-log-header">undo log Header<a class="headerlink" href="#undo-log-header" title="Permanent link">&para;</a></h4>
@@ -3436,19 +3436,19 @@ n 最大值 = (65535 - 2 字节长度值 - 1 NULL 标识) / 字符集一个字�
 <img alt="|500" src="../attachments/Pasted%20image%2020241223164424.png" /></li>
 <li><code>TRX_RSEG_MAX_SIZE</code>：所有 undo 链表的页面之和最大值</li>
 <li><code>TRX_RSEG_HISTORY_SIZE</code> &amp; <code>TRX_RSEG_HISTORY</code>：History 链表页面数  &amp; 基节点</li>
-<li><code>TRX_RSEG_FSEG_HEADER</code>：本回滚段对应的 <a href="#Segment%20Header">MySQL</a></li>
+<li><code>TRX_RSEG_FSEG_HEADER</code>：本回滚段对应的 <a href="#Segment%20Header">Segment Header</a></li>
 <li><code>TRX_RSEG_UNDO_SLOTS</code>：undo 链表 first undo page 页号集合 (1024 页 * 每页 4B)</li>
 </ul>
 <h4 id="undo_1">从回滚段申请 undo 链表<a class="headerlink" href="#undo_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>未分配 undo 页面链表时 undo slots 置为全 1 <code>FIL_NULL</code></li>
 <li>事务分配 undo 链表时依次检查 slots 是否占用，选择一个空的 slot<ul>
-<li>在表空间中新建一个 undo 链表对应的段 <a href="#undo%20log%20Segment%20Header">MySQL</a>， 申请一个页面作为链表 first page，设置 slot 对应页号</li>
+<li>在表空间中新建一个 undo 链表对应的段 <a href="#undo%20log%20Segment%20Header">undo log Segment Header</a>， 申请一个页面作为链表 first page，设置 slot 对应页号</li>
 <li>若 1024 个 slot 都没有空间则会显式报错 <code>Too many active concurrent transactions</code></li>
 </ul>
 </li>
 <li>事务提交时处理 slot<ul>
-<li>指向的 undo 页面链表符合重用条件则<a href="#重用%20undo%20页面">MySQL</a>，将链表<a href="#undo%20log%20Segment%20Header">MySQL</a>的状态置为 <code>TRX_UNDO_CACHED</code> 并将 slot 加入回滚段的 insert/update undo cached 链表</li>
+<li>指向的 undo 页面链表符合重用条件则<a href="#重用%20undo%20页面">重用 undo 页面</a>，将链表<a href="#undo%20log%20Segment%20Header">undo log Segment Header</a>的状态置为 <code>TRX_UNDO_CACHED</code> 并将 slot 加入回滚段的 insert/update undo cached 链表</li>
 <li>不符合重用条件<ul>
 <li>slot 指向 insert undo 链表，则 undo 链表状态置为 <code>TRX_UNDO_TO_FREE</code> <strong>释放</strong> undo 页面链表对应的段，slot 置为空</li>
 <li>指向 update undo 链表，则 undo 链表状态置为 <code>TRX_UNDO_PRUGE</code> 将本事务的 undo log 置于 <strong>history 链表</strong>中，slot 置为空</li>
@@ -3460,13 +3460,13 @@ n 最大值 = (65535 - 2 字节长度值 - 1 NULL 标识) / 字符集一个字�
 <h4 id="_25">多个回滚段<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h4>
 <ul>
 <li>定义了 128 个回滚段，共支持128 * 1024 =  131072 个读写事务并发执行</li>
-<li><a href="#系统表空间">MySQL</a>第 5 号页面中存储了 128 个指针，通过表空间 ID + 页号指向 <a href="#Rollback%20Segment%20Header%20页面">MySQL</a></li>
+<li><a href="#系统表空间">系统表空间</a>第 5 号页面中存储了 128 个指针，通过表空间 ID + 页号指向 <a href="#Rollback%20Segment%20Header%20页面">Rollback Segment Header 页面</a></li>
 <li>0 号回滚段必须在系统表空间中， 33 - 127 号可以默认在系统或配置 undo 表空间，1-32 号必须在临时表空间且数量固定</li>
 <li>修改针对普通表的回滚段中的 undo 页面时，需要记录对应的 redo 日志</li>
 </ul>
 <h4 id="_26">回滚段分配过程<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h4>
 <ul>
-<li>首先事务改动普通表前，到系统表空间 5 号页面分配一个回滚段，获取 <a href="#Rollback%20Segment%20Header%20页面">MySQL</a>地址</li>
+<li>首先事务改动普通表前，到系统表空间 5 号页面分配一个回滚段，获取 <a href="#Rollback%20Segment%20Header%20页面">Rollback Segment Header 页面</a>地址</li>
 <li>查看 insert/update undo cached 链表，优先分配缓存的 slot</li>
 <li>若没有缓存则依次寻找空 slot</li>
 <li>新 slot 需要分配 undo log 段，然后从中申请页面作为 undo 链表首页</li>
@@ -3554,7 +3554,7 @@ n 最大值 = (65535 - 2 字节长度值 - 1 NULL 标识) / 字符集一个字�
 <h4 id="mvcc_2">二级索引利用 MVCC<a class="headerlink" href="#mvcc_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>二级索引记录中没有 <code>trx_id</code> 和 <code>roll_pointer</code></li>
-<li>二级索引页面 <a href="#Page%20Header">MySQL</a> 中有 <code>PAGE_MAX_TRX_ID</code> ，若修改页面记录的事务 id 大于旧属性值，则设置属性为当前事务 id</li>
+<li>二级索引页面 <a href="#Page%20Header">Page Header</a> 中有 <code>PAGE_MAX_TRX_ID</code> ，若修改页面记录的事务 id 大于旧属性值，则设置属性为当前事务 id</li>
 <li>若查询语句通过二级索引进行查询<ul>
 <li>检查 ReadView 中 <code>min_trx_id</code> 是否大于该页面的<code>PAGE_MAX_TRX_ID</code>，若是则记录可见，否则需要回表查询</li>
 <li>若进行了回表查询，首先找到对当前 ReadView 可见的最新版本，然后判断查询列的值是否相同</li>
@@ -3565,7 +3565,7 @@ n 最大值 = (65535 - 2 字节长度值 - 1 NULL 标识) / 字符集一个字�
 <ul>
 <li>ReadView 结构连接成链表，还包含当前最大的事务 no + 1 作为编号</li>
 <li>事务提交时会分配事务 no 提交顺序编号</li>
-<li>purge 操作取出最早的 ReadView，从各个回滚段 <a href="#Rollback%20Segment%20Header%20页面">MySQL</a> 的 History 链表中取出事务提交过的 undo log</li>
+<li>purge 操作取出最早的 ReadView，从各个回滚段 <a href="#Rollback%20Segment%20Header%20页面">Rollback Segment Header 页面</a> 的 History 链表中取出事务提交过的 undo log</li>
 <li>如果一组提交过的 undo log 的事务 no 小于当前系统最早生成的 ReadView 的事务 no，说明 undo log 不会再用到</li>
 <li>从 history 链表移除，释放 log 存储空间，删除进行过 delete mark 的 undo log 对应的真实记录</li>
 <li>使用 RR 隔离级别的事务运行时间很长会让 ReadView 一直复用，从而导致版本链变长</li>
@@ -3586,7 +3586,7 @@ n 最大值 = (65535 - 2 字节长度值 - 1 NULL 标识) / 字符集一个字�
 </li>
 <li>写操作：<ul>
 <li>DELETE：定位记录后获取 X 锁后进行 delete mark</li>
-<li>UPDATE：参考 <a href="#UPDATE%20undo%20log">MySQL</a> <ul>
+<li>UPDATE：参考 <a href="#UPDATE%20undo%20log">UPDATE undo log</a> <ul>
 <li>不修改主键且原地修改：定位记录获取 X 锁后修改</li>
 <li>不修改主键但列不等大：定位记录获取 X 锁后进行完整删除流程再插入记录，锁转移到新记录</li>
 <li>修改主键：按 DELETE + INSERT 操作分解</li>
@@ -3627,7 +3627,7 @@ n 最大值 = (65535 - 2 字节长度值 - 1 NULL 标识) / 字符集一个字�
 <li>隐式锁 <ul>
 <li>当一个事务<strong>插入记录</strong>后另一个事务立刻锁定读 / 修改这条记录，会出现脏读 / 脏写现象</li>
 <li>对聚簇索引记录，事务添加行锁前检查 <code>trx_id</code> 是否为活跃事务，若是则帮助当前事务创建 X 锁，再给自己创建等待中的锁</li>
-<li>对二级索引可以检查 <a href="#Page%20Header">MySQL</a> 的 <code>PAGE_MAX_TRX_ID</code> ，如果不小于最小的活跃事务，还需要回表查询 <code>trx_id</code></li>
+<li>对二级索引可以检查 <a href="#Page%20Header">Page Header</a> 的 <code>PAGE_MAX_TRX_ID</code> ，如果不小于最小的活跃事务，还需要回表查询 <code>trx_id</code></li>
 <li>起到延迟生成锁的效果</li>
 </ul>
 </li>
