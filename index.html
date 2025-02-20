@@ -9,25 +9,23 @@
       
       
       
-        <link rel="prev" href="../JUC%20%E9%94%81/">
+      
+        <link rel="next" href="dev/">
       
       
-        <link rel="next" href="../%E7%BA%BF%E7%A8%8B%E6%B1%A0/">
-      
-      
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
-        <title>AQS - my docs</title>
+        <title>my docs</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.8608ea7d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../stylesheets/theme.css">
+      <link rel="stylesheet" href="stylesheets/theme.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -73,11 +71,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#数据结构" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -88,7 +81,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../.." title="my docs" class="md-header__button md-logo" aria-label="my docs" data-md-component="logo">
+    <a href="." title="my docs" class="md-header__button md-logo" aria-label="my docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AQS
+              Home
             
           </span>
         </div>
@@ -220,9 +213,11 @@
         
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
         
   
     
@@ -237,13 +232,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="dev/" class="md-tabs__link">
           
   
   开发
@@ -261,7 +254,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../project/%E9%A1%B9%E7%9B%AE/" class="md-tabs__link">
+        <a href="project/%E9%A1%B9%E7%9B%AE/" class="md-tabs__link">
           
   
   项目记录
@@ -279,7 +272,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../about/geren.md" class="md-tabs__link">
+        <a href="about/geren.md" class="md-tabs__link">
           
   
   关于
@@ -312,7 +305,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="my docs" class="md-nav__button md-logo" aria-label="my docs" data-md-component="logo">
+    <a href="." title="my docs" class="md-nav__button md-logo" aria-label="my docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -339,10 +332,17 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="." class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -352,6 +352,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -360,28 +361,25 @@
       
   
   
-    
   
   
-  
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -393,7 +391,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             开发
@@ -407,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
+      <a href="dev/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -426,8 +424,6 @@
                 
   
   
-    
-  
   
   
     
@@ -437,11 +433,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -456,7 +454,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Java 基础
@@ -470,7 +468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Java%20%E9%9B%86%E5%90%88/" class="md-nav__link">
+      <a href="dev/Java/Java%20%E9%9B%86%E5%90%88/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -492,7 +490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Java%20%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8/" class="md-nav__link">
+      <a href="dev/Java/Java%20%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -511,8 +509,6 @@
                 
   
   
-    
-  
   
   
     
@@ -522,11 +518,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_3" >
         
           
           <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
@@ -541,7 +539,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2_3">
             <span class="md-nav__icon md-icon"></span>
             Java 并发学习
@@ -555,7 +553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Java%20%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      <a href="dev/Java/Java%20%E5%B9%B6%E5%8F%91/Java%20%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -577,7 +575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../JUC%20%E9%94%81/" class="md-nav__link">
+      <a href="dev/Java/Java%20%E5%B9%B6%E5%8F%91/JUC%20%E9%94%81/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -596,29 +594,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    AQS
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="dev/Java/Java%20%E5%B9%B6%E5%8F%91/AQS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -628,84 +607,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#数据结构" class="md-nav__link">
-    <span class="md-ellipsis">
-      数据结构
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#关键方法" class="md-nav__link">
-    <span class="md-ellipsis">
-      关键方法
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="关键方法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#accquire" class="md-nav__link">
-    <span class="md-ellipsis">
-      accquire
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#release" class="md-nav__link">
-    <span class="md-ellipsis">
-      release
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#acquireShared" class="md-nav__link">
-    <span class="md-ellipsis">
-      acquireShared
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#releaseShared" class="md-nav__link">
-    <span class="md-ellipsis">
-      releaseShared
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -718,7 +619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E7%BA%BF%E7%A8%8B%E6%B1%A0/" class="md-nav__link">
+      <a href="dev/Java/Java%20%E5%B9%B6%E5%8F%91/%E7%BA%BF%E7%A8%8B%E6%B1%A0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -740,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../volatile%20%26%20synchronized/" class="md-nav__link">
+      <a href="dev/Java/Java%20%E5%B9%B6%E5%8F%91/volatile%20%26%20synchronized/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -778,7 +679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../MySQL/" class="md-nav__link">
+      <a href="dev/MySQL/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -800,7 +701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../MQ/" class="md-nav__link">
+      <a href="dev/MQ/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -822,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Spring%20%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      <a href="dev/Spring%20%E5%9F%BA%E7%A1%80/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -844,7 +745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Spring%20Security/" class="md-nav__link">
+      <a href="dev/Spring%20Security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -914,7 +815,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../project/%E9%A1%B9%E7%9B%AE/" class="md-nav__link">
+      <a href="project/%E9%A1%B9%E7%9B%AE/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -984,7 +885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../about/geren.md" class="md-nav__link">
+      <a href="about/geren.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1006,7 +907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../about/web.md" class="md-nav__link">
+      <a href="about/web.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1046,74 +947,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#数据结构" class="md-nav__link">
-    <span class="md-ellipsis">
-      数据结构
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#关键方法" class="md-nav__link">
-    <span class="md-ellipsis">
-      关键方法
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="关键方法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#accquire" class="md-nav__link">
-    <span class="md-ellipsis">
-      accquire
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#release" class="md-nav__link">
-    <span class="md-ellipsis">
-      release
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#acquireShared" class="md-nav__link">
-    <span class="md-ellipsis">
-      acquireShared
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#releaseShared" class="md-nav__link">
-    <span class="md-ellipsis">
-      releaseShared
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1131,102 +964,10 @@
   
 
 
-  <h1>AQS</h1>
+  <h1>Home</h1>
 
-<p>抽象类+先进先出队列+同步<br />
-- 如果被请求的共享资源空闲，那么就将当前请求资源的线程设置为有效的工作线程，将共享资源设置为锁定状态<br />
-- 如果共享资源被占用，就需要一定的阻塞等待唤醒机制来保证锁分配<br />
-- AQS 使用 <strong>volatile 的 int state 成员变量</strong>表示同步状态，通过<strong>内置的 FIFO 队列</strong>完成资源获取的排队工作，通过 <strong>CAS</strong> 完成对 state 值的修改<br />
-- 主要任务：同步状态的原子性管理、线程阻塞、队列管理<br />
-- 继承了 <code>AbstractOwnableSynchronizer</code>，用于表示锁与持有者之间的关系（独占模式），设置 / 获取锁的持有者<br />
-<img alt="|700" src="../attachments/Pasted%20image%2020250114170713.png" /></p>
-<h2 id="数据结构">数据结构<a class="headerlink" href="#数据结构" title="Permanent link">&para;</a></h2>
-<ul>
-<li>state 作为同步状态，根据具体实现类决定<ul>
-<li>提供了一些 final 方法获取/设置 state 值，可以实现共享或独占模式；工具需要自定义 API 层 acquire/release 状态</li>
-</ul>
-</li>
-<li>队列是双向链表，每个请求共享资源的线程封装成节点<ul>
-<li>前后节点指针</li>
-<li>该节点的线程</li>
-<li><code>nextWaiter</code> 下一个 <code>CONDITION</code> 的节点</li>
-<li>节点状态<ul>
-<li><code>0</code> 当一个Node被初始化的时候的默认值</li>
-<li><code>1 CANCELLED</code>线程获取锁的请求已经取消</li>
-<li><code>-1 SIGNAL</code> 后继节点已经准备好，等待当前节点唤醒</li>
-<li><code>-2 CONDITION</code>节点等待在 Condition 上</li>
-<li><code>-3 PROPAGATE</code> 共享模式下唤醒传播到后继的后继</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="关键方法">关键方法<a class="headerlink" href="#关键方法" title="Permanent link">&para;</a></h2>
-<p>自定义同步器主要选择性实现以下方法<br />
-- <code>isHeldExclusively()</code>：该线程是否正在独占资源，只有用到 condition 才需要实现<br />
-- <code>tryAcquire(int)</code>：独占方式尝试获取资源，成功则返回true，失败则返回false<br />
-- <code>tryRelease(int)</code>：独占方式尝试释放资源，同上<br />
-- <code>tryAcquireShared(int)</code>：共享尝试获取资源。负数表示失败；0表示成功，但没有剩余可用资源；正数表示成功，有剩余资源<br />
-- <code>tryReleaseShared(int)</code>：共享方式尝试释放资源，如果释放后允许唤醒后续等待结点返回 true，否则返回 false</p>
-<h3 id="accquire">accquire<a class="headerlink" href="#accquire" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>public final void acquire(int arg)</code> 获取资源顶层方法</li>
-<li><code>tryAcquire()</code>尝试获取资源，成功直接返回，由自定义同步器实现</li>
-<li><code>addWaiter(Node.EXCLUSIVE)</code>将该线程以独占模式加入同步队列尾部<ul>
-<li>使用 <strong>CAS 自旋 volatile 变量</strong>（tail 变量）插入新节点</li>
-</ul>
-</li>
-<li><code>acquireQueued()</code> 阻塞线程在同步队列中获取资源，获取到资源后返回<ul>
-<li><strong>自旋</strong>取得前驱节点，如果<strong>前驱是头节点</strong>则尝试获取资源，返回是否被中断标记</li>
-<li>获取资源失败后<code>shouldParkAfterFailedAcquire()</code> 检查是否应该 waiting<ul>
-<li>只有前驱结点状态是 <code>SIGNAL</code> 返回 true，允许进入 waiting 状态等待</li>
-<li>若前驱 <code>CANCELLED</code>，向前遍历队列找到第一个状态不是<code>CANCELLED</code>的节点，插入到该节点后（GC 放弃跳过的节点）</li>
-<li>若前驱为正常的其他状态，CAS 将前驱设置为 <code>SIGNAL</code> </li>
-</ul>
-</li>
-<li>允许进入 waiting 状态则进入<code>parkAndCheckInterrupt()</code>调用<code>LockSupport.park(this)</code><ul>
-<li><code>Thread.interrupted()</code>读取并重置线程中断标志位，检查是否被中断过</li>
-</ul>
-</li>
-<li>如果自旋中没有获取资源则 <code>cancelAcquire(node)</code> 取消节点等待</li>
-</ul>
-</li>
-<li>如果线程在等待过程中被中断过，获取资源后再进行<code>selfInterrupt()</code><ul>
-<li>属于不可中断的实现，<code>acquireInterruptibly()</code> 则是可中断的（aborting if interrupted）<br />
-<img alt="|825" src="../attachments/Pasted%20image%2020250115153629.png" /></li>
-</ul>
-</li>
-</ul>
-<h3 id="release">release<a class="headerlink" href="#release" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>public final boolean release(int arg)</code> 释放资源顶层方法</li>
-<li><code>tryRelease()</code>尝试释放资源，成功表示已经<strong>完全</strong>释放资源，由自定义同步器实现</li>
-<li><code>unparkSuccessor()</code> 释放资源后找到头节点，唤醒下一个节点<ul>
-<li>从后往前遍历队列，用<code>unpark()</code>唤醒同步队列中<strong>最前边的未放弃线程</strong></li>
-</ul>
-</li>
-</ul>
-<h3 id="acquireShared">acquireShared<a class="headerlink" href="#acquireShared" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>public final void acquireShared(int arg)</code> 共享模式获取资源顶层方法</li>
-<li><code>tryAcquireShared()</code>尝试获取资源，负值代表获取失败，由自定义同步器实现</li>
-<li>失败则通过<code>doAcquireShared()</code>加入队列<ul>
-<li><code>addWaiter(Node.SHARED)</code> 将该线程以共享模式加入同步队列</li>
-<li>自旋获取前驱节点，尝试获取资源。<strong>资源有剩余还会传播唤醒之后线程</strong><ul>
-<li><code>setHeadAndPropagate()</code> 设置头节点并尝试释放下一个节点</li>
-</ul>
-</li>
-<li>同上独占模式的流程</li>
-</ul>
-</li>
-</ul>
-<h3 id="releaseShared">releaseShared<a class="headerlink" href="#releaseShared" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>public final boolean releaseShared(int arg)</code> 共享模式释放资源顶层方法</li>
-<li><code>tryReleaseShared()</code> 尝试释放资源，<strong>不一定完全释放资源</strong>，由自定义同步器实现</li>
-<li><code>doReleaseShared()</code> 唤醒头节点的后继结点</li>
-</ul>
-<p><a href="https://www.cnblogs.com/waterystone/p/4920797.html">Java并发之AQS详解 - waterystone - 博客园</a></p>
+<p>欢迎来到我的个人知识库 🌟<br />
+<strong>🚧🚧🚧 首页施工中 🚧🚧🚧</strong></p>
 
 
 
@@ -1289,14 +1030,14 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "navigation.expand", "search.share"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "navigation.expand", "search.share"], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      <script src="assets/javascripts/bundle.f1b6f286.min.js"></script>
       
-        <script src="../../../../javascripts/extra.js"></script>
+        <script src="javascripts/extra.js"></script>
       
-        <script src="../../../../javascripts/mathjax.js"></script>
+        <script src="javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
