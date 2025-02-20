@@ -10,24 +10,28 @@
         <meta name="author" content="cyi">
       
       
-        <link rel="canonical" href="https://felixhana.github.io/dev/Java/Java%20%E6%8A%80%E6%9C%AF%E6%9D%82%E9%A1%B9/">
+        <link rel="canonical" href="https://felixhana.github.io/dev/MyBatis/">
       
       
+        <link rel="prev" href="../MQ/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+        <link rel="next" href="../Spring%20%E5%9F%BA%E7%A1%80/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
     
     
       
-        <title>Java 技术杂项 - my docs</title>
+        <title>MyBatis 基础 - my docs</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,9 +50,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/theme.css">
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#TODO-学一下-stream-map-等" class="md-skip">
+        <a href="#入门" class="md-skip">
           跳转至
         </a>
       
@@ -88,7 +92,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="my docs" class="md-header__button md-logo" aria-label="my docs" data-md-component="logo">
+    <a href="../.." title="my docs" class="md-header__button md-logo" aria-label="my docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Java 技术杂项
+              MyBatis 基础
             
           </span>
         </div>
@@ -222,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -237,11 +241,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   开发
@@ -259,7 +265,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../project/%E9%A1%B9%E7%9B%AE/" class="md-tabs__link">
+        <a href="../../project/%E9%A1%B9%E7%9B%AE/" class="md-tabs__link">
           
   
   项目记录
@@ -277,7 +283,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../about/geren.md" class="md-tabs__link">
+        <a href="../../about/geren.md" class="md-tabs__link">
           
   
   关于
@@ -310,7 +316,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="my docs" class="md-nav__button md-logo" aria-label="my docs" data-md-component="logo">
+    <a href="../.." title="my docs" class="md-nav__button md-logo" aria-label="my docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -340,7 +346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -358,25 +364,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -388,7 +397,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             开发
@@ -402,7 +411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -465,7 +474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Java%20%E9%9B%86%E5%90%88/" class="md-nav__link">
+      <a href="../Java/Java%20%E9%9B%86%E5%90%88/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -487,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Java%20%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8/" class="md-nav__link">
+      <a href="../Java/Java%20%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -550,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Java%20%E5%B9%B6%E5%8F%91/Java%20%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      <a href="../Java/Java%20%E5%B9%B6%E5%8F%91/Java%20%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -572,7 +581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Java%20%E5%B9%B6%E5%8F%91/JUC%20%E9%94%81/" class="md-nav__link">
+      <a href="../Java/Java%20%E5%B9%B6%E5%8F%91/JUC%20%E9%94%81/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -594,7 +603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Java%20%E5%B9%B6%E5%8F%91/AQS/" class="md-nav__link">
+      <a href="../Java/Java%20%E5%B9%B6%E5%8F%91/AQS/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -616,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Java%20%E5%B9%B6%E5%8F%91/%E7%BA%BF%E7%A8%8B%E6%B1%A0/" class="md-nav__link">
+      <a href="../Java/Java%20%E5%B9%B6%E5%8F%91/%E7%BA%BF%E7%A8%8B%E6%B1%A0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -638,7 +647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Java%20%E5%B9%B6%E5%8F%91/volatile%20%26%20synchronized/" class="md-nav__link">
+      <a href="../Java/Java%20%E5%B9%B6%E5%8F%91/volatile%20%26%20synchronized/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -676,7 +685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MySQL/" class="md-nav__link">
+      <a href="../MySQL/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -698,7 +707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../MQ/" class="md-nav__link">
+      <a href="../MQ/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -717,10 +726,31 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../MyBatis/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    MyBatis 基础
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -730,6 +760,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lombok" class="md-nav__link">
+    <span class="md-ellipsis">
+      lombok
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -742,7 +801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Spring%20%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      <a href="../Spring%20%E5%9F%BA%E7%A1%80/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -764,7 +823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Spring%20Security/" class="md-nav__link">
+      <a href="../Spring%20Security/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -834,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../project/%E9%A1%B9%E7%9B%AE/" class="md-nav__link">
+      <a href="../../project/%E9%A1%B9%E7%9B%AE/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -856,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../project/ns3/" class="md-nav__link">
+      <a href="../../project/ns3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -926,7 +985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/geren.md" class="md-nav__link">
+      <a href="../../about/geren.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -948,7 +1007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/web.md" class="md-nav__link">
+      <a href="../../about/web.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -997,9 +1056,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#注解" class="md-nav__link">
+  <a href="#lombok" class="md-nav__link">
     <span class="md-ellipsis">
-      注解
+      lombok
     </span>
   </a>
   
@@ -1024,36 +1083,243 @@
   
 
 
-<p>List 分组<br />
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Map&lt;Long, List&lt;AddressVO&gt;&gt; addressMap = new HashMap&lt;&gt;(0);
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>if (CollUtil.isNotEmpty(addressMap)) {
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    addressMap = addressVOList.stream().collect(Collectors.groupingBy(AddressVO::getUserId));
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>}
-</code></pre></div></p>
-<h1 id="TODO-学一下-stream-map-等">TODO 学一下 stream map 等<a class="headerlink" href="#TODO-学一下-stream-map-等" title="Permanent link">&para;</a></h1>
-<p><a href="https://blog.csdn.net/DxCaesar/article/details/104308341">Java字符串拼接性能问题</a></p>
-<h2 id="注解">注解<a class="headerlink" href="#注解" title="Permanent link">&para;</a></h2>
-<p>自定义注解必须使用<code>@interface</code>来标识，并可以定义变量。default 用于定义默认值；注意：参数成员只能用基本类型byte,short,char,int,long,float,double,boolean八种基本数据类型和String、Enum、Class、annotations等数据类型,以及这一些类型的数组。</p>
+<p>MyBatis 是一款优秀的持久层框架，用于简化JDBC的开发</p>
+<h1 id="入门">入门<a class="headerlink" href="#入门" title="Permanent link">&para;</a></h1>
 <ul>
-<li><strong>@Retention：定义注解的保留策略</strong><ul>
-<li>@Retention(RetentionPolicy.SOURCE) ，注解仅存在于源码中，在class字节码文件中不包含</li>
-<li>@Retention(RetentionPolicy.CLASS) ，默认的保留策略，注解会在class字节码文件中存在，但运行时无法获得</li>
-<li>@Retention(RetentionPolicy.RUNTIME) ，注解会在class字节码文件中存在，在运行时可以通过反射获取到</li>
+<li>MyBatis &amp; MySQL 依赖</li>
+<li>实体类及相关方法</li>
+<li>配置数据库连接 application.properties</li>
+<li>持久层接口 Mapper<ul>
+<li>@Mapper 表示是 mybatis 中的 Mapper 接口，框架会自动生成接口的实现类对象(代理对象)，并给交 Spring IOC 容器管理</li>
+<li>@Select 代表 select 查询<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>@Mapper
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>public interface UserMapper {
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    @Select(&quot;select id, name, age, gender, phone from user&quot;)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    public List&lt;User&gt; list();
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>}
+</code></pre></div></li>
 </ul>
 </li>
-<li><strong>@Target：指定被修饰的Annotation可以放置的位置(被修饰的目标)</strong><ul>
-<li>@Target(ElementType.TYPE) ，接口、类</li>
-<li>@Target(ElementType.FIELD) ，属性</li>
-<li>@Target(ElementType.METHOD) ，方法</li>
-<li>@Target(ElementType.PARAMETER)，方法参数</li>
-<li>@Target(ElementType.CONSTRUCTOR)，构造函数</li>
-<li>@Target(ElementType.LOCAL_VARIABLE) ，局部变量</li>
-<li>@Target(ElementType.ANNOTATION_TYPE) ，注解</li>
-<li>@Target(ElementType.PACKAGE) ，包</li>
+<li>单元测试<ul>
+<li>测试类在运行时，会自动通过引导类加载Spring的环境（IOC容器）</li>
+<li>通过 @Autowired 将 bean 注入<a href="SpringBoot.md#DI">SpringBoot</a></li>
+</ul>
+</li>
+<li>数据库连接池<ul>
+<li>Container 负责分配、管理数据库连接</li>
+<li>允许应用程序重复使用一个现有的数据库连接</li>
+<li>释放空闲时间超过最大空闲时间的连接</li>
+<li>好处：资源重用/提升响应速度/避免连接遗漏</li>
 </ul>
 </li>
 </ul>
-<p>一般@Retention设置成RetentionPolicy.RUNTIME即可，@Target一般设置在类或者方法或者变量上。注解仅仅作为一个标识，当某个方法执行时我们需要在自定义注解逻辑中去判断是否有被这个注解所标识，如果有则具体处理，否则放行</p>
+<h2 id="lombok">lombok<a class="headerlink" href="#lombok" title="Permanent link">&para;</a></h2>
+<ul>
+<li>通过简单的注解来简化和消除一些必须有但很臃肿的代码</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>注解</strong></th>
+<th><strong>作用</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@Getter/@Setter</td>
+<td>为所有的属性提供get/set方法</td>
+</tr>
+<tr>
+<td>@ToString</td>
+<td>会给类自动生成易阅读的 toString 方法</td>
+</tr>
+<tr>
+<td>@EqualsAndHashCode</td>
+<td>根据类所拥有的非静态字段自动重写 equals 方法和 hashCode 方法</td>
+</tr>
+<tr>
+<td>@Data</td>
+<td>提供了更综合的生成代码功能（@Getter + @Setter + @ToString + @EqualsAndHashCode）</td>
+</tr>
+<tr>
+<td>@NoArgsConstructor</td>
+<td>为实体类生成无参的构造器方法</td>
+</tr>
+<tr>
+<td>@AllArgsConstructor</td>
+<td>为实体类生成除了static修饰的字段之外带有各参数的构造器方法。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="基础操作">基础操作<a class="headerlink" href="#基础操作" title="Permanent link">&para;</a></h1>
+<ul>
+<li>准备数据库</li>
+<li>数据库连接信息</li>
+<li>对应表的实体类（驼峰命名）<ul>
+<li>数据封装问题：实体类属性名和表查询返回字段名不一致<ul>
+<li>起别名 AS</li>
+<li>手动结果映射 @Results 注解</li>
+<li>开启驼峰命名 abc_xyz =&gt; abcXyz</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Mapper 接口</li>
+</ul>
+<h2 id="删除">删除<a class="headerlink" href="#删除" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>根据主键删除数据<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>@Delete(&quot;delete from emp where id = #{id}&quot;)
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    public void delete(Integer id);
+</code></pre></div></p>
+</li>
+<li>
+<h1 id="-占位符生成预编译-SQL-自动设置参数值">{...} 占位符生成预编译 SQL 自动设置参数值<a class="headerlink" href="#-占位符生成预编译-SQL-自动设置参数值" title="Permanent link">&para;</a></h1>
+</li>
+<li>${...} 拼接 SQL 有注入风险</li>
+</ul>
+<h2 id="新增">新增<a class="headerlink" href="#新增" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>@Insert(&quot;insert into emp(username, name, gender, image, job, entrydate, dept_id, create_time, update_time) values (#{username}, #{name}, #{gender}, #{image}, #{job}, #{entrydate}, #{deptId}, #{createTime}, #{updateTime})&quot;)
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    public void insert(Emp emp);
+</code></pre></div>
+<ul>
+<li>主键返回 增加 @Option 注解</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>@Options(useGeneratedKeys = true,keyProperty = &quot;id&quot;)
+</code></pre></div>
+<h2 id="更新">更新<a class="headerlink" href="#更新" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a> @Update(&quot;update emp set username=#{username}, name=#{name}, gender=#{gender}, image=#{image}, job=#{job}, entrydate=#{entrydate}, dept_id=#{deptId}, update_time=#{updateTime} where id=#{id}&quot;)
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    public void update(Emp emp);
+</code></pre></div>
+<h2 id="查询">查询<a class="headerlink" href="#查询" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>@Select(&quot;select id, username, password, name, gender, image, job, entrydate, dept_id, create_time, update_time from emp where id=#{id}&quot;)
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    public Emp getById(Integer id);
+</code></pre></div>
+<h2 id="条件查询">条件查询<a class="headerlink" href="#条件查询" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>@Select(&quot;select * from emp &quot; +
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>            &quot;where name like concat(&#39;%&#39;,#{name},&#39;%&#39;) &quot; +
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>            &quot;and gender = #{gender} &quot; +
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>            &quot;and entrydate between #{begin} and #{end} &quot; +
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>            &quot;order by update_time desc&quot;)
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    public List&lt;Emp&gt; list(String name, Short gender, LocalDate begin, LocalDate end);
+</code></pre></div>
+<ul>
+<li>concat('%',#{name},'%') 生成预编译的 SQL</li>
+</ul>
+<h1 id="XML-映射文件">XML 映射文件<a class="headerlink" href="#XML-映射文件" title="Permanent link">&para;</a></h1>
+<h2 id="开发规范">开发规范<a class="headerlink" href="#开发规范" title="Permanent link">&para;</a></h2>
+<ol>
+<li>XML 映射文件的名称与 Mapper 接口名称一致，并且将 XML 映射文件和 Mapper 接口放置在相同包下（同包同名）</li>
+<li>XML 映射文件的 namespace 属性为 Mapper 接口全限定名一致</li>
+<li>XML 映射文件中 sql 语句的 id 与 Mapper 接口中的方法名一致，并保持返回类型一致。</li>
+<li>dtd 约束<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>&lt;!DOCTYPE mapper
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>  &quot;https://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>&lt;mapper namespace=&quot;com.zcy.mapper.Empmapper&quot;&gt;
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>&lt;/mapper&gt;
+</code></pre></div></li>
+</ol>
+<h2 id="查询_1">查询<a class="headerlink" href="#查询_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>&lt;!--查询操作--&gt; 
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>&lt;select id=&quot;list&quot; resultType=&quot;com.itheima.pojo.Emp&quot;&gt; 
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    select * from emp 
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    where name like concat(&#39;%&#39;,#{name},&#39;%&#39;) 
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>        and gender = #{gender} 
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        and entrydate between #{begin} and #{end} 
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        order by update_time desc 
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>&lt;/select&gt;
+</code></pre></div>
+<h2 id="动态-SQL">动态 SQL<a class="headerlink" href="#动态-SQL" title="Permanent link">&para;</a></h2>
+<ul>
+<li>灵活组装实现 SQL 语句</li>
+</ul>
+<h3 id="if--where-实现复合条件">if &amp; where 实现复合条件<a class="headerlink" href="#if--where-实现复合条件" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>&lt;if test=&quot;cond&quot;&gt;
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>   要拼接的sql语句
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>&lt;/if&gt;
+</code></pre></div>
+<ul>
+<li><code>&lt;if&gt;</code>用于判断条件是否成立。使用test属性进行条件判断，如果条件为true，则拼接SQL</li>
+<li><code>&lt;where&gt;</code>只会在子元素有内容的情况下才插入where子句，而且会自动去除子句的开头的AND或OR</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>&lt;select id=&quot;list&quot; resultType=&quot;com.itheima.pojo.Emp&quot;&gt;
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>        select * from emp
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>        &lt;where&gt;
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>             &lt;!-- if做为where标签的子元素 --&gt;
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>             &lt;if test=&quot;name != null&quot;&gt;
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>                 and name like concat(&#39;%&#39;,#{name},&#39;%&#39;)
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>             &lt;/if&gt;
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>             &lt;if test=&quot;gender != null&quot;&gt;
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>                 and gender = #{gender}
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>             &lt;/if&gt;
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>             &lt;if test=&quot;begin != null and end != null&quot;&gt;
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>                 and entrydate between #{begin} and #{end}
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>             &lt;/if&gt;
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>        &lt;/where&gt;
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>        order by update_time desc
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>&lt;/select&gt;
+</code></pre></div>
+<h3 id="update--set-动态更新">update &amp; set 动态更新<a class="headerlink" href="#update--set-动态更新" title="Permanent link">&para;</a></h3>
+<ul>
+<li>如果更新时传递了值才更新</li>
+<li><code>&lt;set&gt;</code> 动态的在SQL语句中插入set关键字，并会删掉额外的逗号</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>&lt;!--更新操作--&gt;
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    &lt;update id=&quot;update&quot;&gt;
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>        update emp
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>        &lt;!-- 使用set标签，代替update语句中的set关键字 --&gt;
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>        &lt;set&gt;
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>            &lt;if test=&quot;username != null&quot;&gt;
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>                username=#{username},
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>            &lt;/if&gt;
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>            &lt;if test=&quot;name != null&quot;&gt;
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>                name=#{name},
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>            &lt;/if&gt;
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>            &lt;if test=&quot;gender != null&quot;&gt;
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>                gender=#{gender},
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>            &lt;/if&gt;
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>            &lt;if test=&quot;image != null&quot;&gt;
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>                image=#{image},
+<a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a>            &lt;/if&gt;
+<a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a>            &lt;if test=&quot;job != null&quot;&gt;
+<a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>                job=#{job},
+<a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a>            &lt;/if&gt;
+<a id="__codelineno-11-21" name="__codelineno-11-21" href="#__codelineno-11-21"></a>            &lt;if test=&quot;entrydate != null&quot;&gt;
+<a id="__codelineno-11-22" name="__codelineno-11-22" href="#__codelineno-11-22"></a>                entrydate=#{entrydate},
+<a id="__codelineno-11-23" name="__codelineno-11-23" href="#__codelineno-11-23"></a>            &lt;/if&gt;
+<a id="__codelineno-11-24" name="__codelineno-11-24" href="#__codelineno-11-24"></a>            &lt;if test=&quot;deptId != null&quot;&gt;
+<a id="__codelineno-11-25" name="__codelineno-11-25" href="#__codelineno-11-25"></a>                dept_id=#{deptId},
+<a id="__codelineno-11-26" name="__codelineno-11-26" href="#__codelineno-11-26"></a>            &lt;/if&gt;
+<a id="__codelineno-11-27" name="__codelineno-11-27" href="#__codelineno-11-27"></a>            &lt;if test=&quot;updateTime != null&quot;&gt;
+<a id="__codelineno-11-28" name="__codelineno-11-28" href="#__codelineno-11-28"></a>                update_time=#{updateTime}
+<a id="__codelineno-11-29" name="__codelineno-11-29" href="#__codelineno-11-29"></a>            &lt;/if&gt;
+<a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a>        &lt;/set&gt;
+<a id="__codelineno-11-31" name="__codelineno-11-31" href="#__codelineno-11-31"></a>        where id=#{id}
+<a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a>    &lt;/update&gt;
+</code></pre></div>
+<h3 id="foreach-处理集合">foreach 处理集合<a class="headerlink" href="#foreach-处理集合" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>&lt;foreach collection=&quot;集合名称&quot; item=&quot;集合遍历出来的元素/项&quot; separator=&quot;每一次遍历使用的分隔符&quot; 
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>         open=&quot;遍历开始前拼接的片段&quot; close=&quot;遍历结束后拼接的片段&quot;&gt;
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>&lt;/foreach&gt;
+</code></pre></div><br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>&lt;delete id=&quot;deleteByIds&quot;&gt;
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    delete from emp where id in
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    &lt;foreach collection=&quot;ids&quot; item=&quot;id&quot; separator=&quot;,&quot; open=&quot;(&quot; close=&quot;)&quot;&gt;
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>        #{id}
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    &lt;/foreach&gt;
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>&lt;/delete&gt;
+</code></pre></div></p>
+<h3 id="sql--include-复用片段">sql &amp; include 复用片段<a class="headerlink" href="#sql--include-复用片段" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>&lt;sql id=&quot;commonSelect&quot;&gt;
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    select id, username, password, name, gender, image, job, entrydate, dept_id, create_time, update_time from emp
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>&lt;/sql&gt;
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>&lt;include refid=&quot;commonSelect&quot;/&gt;
+</code></pre></div>
 
 
 
@@ -1116,14 +1382,14 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "navigation.expand", "search.share"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "navigation.expand", "search.share"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
       
-        <script src="../../../javascripts/extra.js"></script>
+        <script src="../../javascripts/extra.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
